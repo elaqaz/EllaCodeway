@@ -19,7 +19,7 @@
 }
 
 .jumbotron {
- background-image: asset-url('jumbo-copy.jpg');
+ background-image: asset-url('img name');
  background-position: center center;
  background-repeat: no-repeat;
  background-size: cover;
@@ -38,4 +38,62 @@ body {
 
 #sticky-footer {
  flex-shrink: none;
+}
+
+/* Basic container and background styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light grey background */
+  box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners for modern feel */
+}
+
+/* Styling for the main header area */
+.jumbotron {
+  text-align: center;
+  // background-color: #ffffff; /* White background for focus */
+  padding: 40px;
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 20px; /* Space below the jumbotron */
+}
+
+.jumbotron h1.display-4 {
+  font-size: 2.5rem;
+  color: #333; /* Dark grey for contrast */
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Space below the main title */
+}
+
+.jumbotron h2 {
+  font-size: 1.8rem;
+  color: #007bff; /* Bootstrap primary blue */
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+/* Improved typography and spacing for content */
+.jumbotron p {
+  color: #666; /* Medium grey for readability */
+  font-size: 1.2rem;
+  line-height: 1.6; /* More readable line spacing */
+}
+
+/* Stylish button with hover effect */
+.btn-success {
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px; /* Slightly rounded button edges */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover {
+  background-color:rgb(16, 86, 16); /* Darker blue on hover */
+}
+
+hr.my-4 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

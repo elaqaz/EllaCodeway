@@ -13,11 +13,12 @@
 
   </head>
 
-  <body >
+  <body class="d-flex flex-column vh-100" >
     
     <%= render "layouts/navbar" %>
-
-    <%= yield %>
+      <div class="container mb-auto">
+        <%= yield %>
+      </div>
 
   </body>
   <%# <%= render 'layouts/navigation' %> 

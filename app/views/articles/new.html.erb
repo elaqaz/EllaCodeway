@@ -1,9 +1,62 @@
-<h1>New article</h1>
-
-<%= render "form", article: @article %>
-
-<br>
-
-<div>
-  <%= link_to "Back to articles", articles_path %>
+<div id="page-content">
+  <h1 class="text-center mt-4">Create a new article</h1> 
+  <div class="row justify-content-md-center">
+    <div class="col-md-8">
+      <div class="card shadow rounded-3" style="background-color: #009688; border: none;">
+        <div class="card-body">
+          <%= form_with model: @article, local: true do |form| %>
+            <div class="mb-3 row">
+              <%= form.label :title, class: "col-sm-2 col-form-label text-white" %>
+              <div class="col-sm-10">
+                <%= form.text_field :title, class: "form-control", placeholder: "Title of article", style: "background-color: #ffffff; color: black;" %>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <%= form.label :description, class: "col-sm-2 col-form-label text-white" %>
+              <div class="col-sm-10">
+                <%= form.text_area :description, class: "form-control", placeholder: "Description", style: "background-color: #ffffff; color: black; height: 200px;" %>
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <%= form.submit "Create Article", class: "btn btn-light btn-block", style: "color: #009688; border: 2px solid #009688;" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <%= link_to "Cancel and return to articles listing", articles_path, class: "text-decoration-none text-primary", style: "color: #007bff;" %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<style>
+  .card {
+    background-color: #009688; /* Blue-green background */
+    border-radius: 15px !important; /* Rounded corners */
+  }
+  .form-label {
+    color: #ffffff; /* White text for labels */
+  }
+  .form-control {
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 5px; /* Slightly rounded corners */
+  }
+  .btn-light {
+    background-color: #ffffff; /* White button */
+    color: #009688; /* Blue-green text */
+    border: 2px solid #009688; /* Blue-green border */
+  }
+  .btn-light:hover {
+    background-color: #f1f1f1; /* Light grey on hover */
+    color: #007bff; /* Blue text on hover */
+    border: 2px solid #007bff; /* Blue border on hover */
+  }
+  .text-decoration-none.text-primary {
+    color: #007bff; /* Primary blue text for the cancel link */
+  }
+  .text-decoration-none.text-primary:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+  }
+</style>

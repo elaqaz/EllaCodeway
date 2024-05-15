@@ -1,16 +1,28 @@
-<div id="page-content">
-  <h1 class="text-center mt-4">Create a new article</h1> 
+<div id="page-content" class="bg-light p-4">
+  <h1 class="text-center mt-4">Create a new article</h1>
 
   <div class="row justify-content-md-center">
     <div class="col-md-8">
       <div class="card shadow rounded-3" style="background-color: #009688; border: none;">
         <div class="card-body">
-          <%= render "form", article: @article %>
+          <%= form_with(model: @article, local: true) do |form| %>
+            <div class="mb-3">
+              <%= form.label :title, class: "form-label text-white" %>
+              <%= form.text_field :title, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= form.label :description, class: "form-label text-white" %>
+              <%= form.text_area :description, class: "form-control", rows: 5 %>
+            </div>
+            <div class="text-center">
+              <%= form.submit "Create Article", class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="text-center mt-3">
-        <%= link_to "Show this article", @article, class: "text-decoration-none text-primary", style: "color: #007bff;" %> |
-        <%= link_to "Back to articles", articles_path, class: "text-decoration-none text-primary", style: "color: #007bff;" %>
+        <%= link_to "Show this article", @article, class: "text-" %> |
+        <%= link_to "Back to articles", articles_path, class: "text-" %>
       </div>
     </div>
   </div>
